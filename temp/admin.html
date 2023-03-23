@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body style="background-color:#088F8F;">
+<h1>wellcome <span style="color:yellow;">{{email}}</span></h1>
+<div class="divinlog">
+    <h1 class="loginlogo"><strong>Upload Photo</strong></h1>
+
+    <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+
+       <input type="file" name="image" accept="image/*" class="ipbox"><br>
+
+       <button class="button1" type="submit"><strong>Submit</strong></button><br>
+
+</form>
+</div>
+<div class="maindiv">
+    <h1 class="loginlogo">ALL IMAGES</h1>
+{% for x in mymembers %}
+<div class="divwidth">
+<img class="imagewidth" src="http://127.0.0.1:8000/media/{{ x.image }}" alt="{{ x.image }}">
+
+</div>
+{% endfor %}
+</div>
+</body>
+</html>
+
+
+<!--
+<img class="imagewidth" src="http://127.0.0.1:8000/media/{{ x.image }}" alt="{{ x.image }}">
+
+{% for x in mymembers %}
+
+{% endfor %}

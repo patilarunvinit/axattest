@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+<div class="divinlog">
+    <h1 class="loginlogo"><strong>LogIn</strong></h1>
+
+             <form method="post">
+                 {% csrf_token %}
+                 <input type="text" class="ipbox" name="email" placeholder="USERNMAE"><br>
+
+                 <input type="password" class="ipbox" name="password" placeholder="PASSWORD" ><br>
+
+
+
+                  <button class="button1" type="submit"><strong>LOGIN</strong></button><br>
+
+             </form>
+             <a class="link123" href="http://127.0.0.1:8000/registration/">NEW USER? </a>
+
+
+</div>
+
+</body>
+</html>
